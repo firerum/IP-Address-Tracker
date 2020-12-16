@@ -33,7 +33,7 @@
 
 body {
    font-family: rubik, sans-serif;
-   font-size: 12px;
+   font-size: 10px;
    line-height: 1.4;
    color: var(--Dark-Gray);
 }
@@ -53,9 +53,9 @@ input[type="text"] {
 
 .banner {
    background-image: url("images/pattern-bg.png");
-   padding: var(--pry-padding);
+   padding: 2em 2em 10em 2em;
    text-align: center;
-   height: 400px;
+   height: 320px;
 }
 
 .banner > h1 {
@@ -89,8 +89,7 @@ input[type="text"] {
 /* Main Styles */
 
 main {
-   padding: var(--pry-padding);
-   background-color: var(--Dark-Gray);
+   position: relative;
 }
 
 main > .wrapper {
@@ -98,7 +97,13 @@ main > .wrapper {
    background-color: #fff;
    padding: var(--pry-padding);
    text-align: center;
-   margin-top: -250px;
+   position: absolute;
+   top: 0%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: calc(100% - 50px);
+   max-width: 1040px;
+   z-index: 2;
 }
 
 main > .wrapper li {
@@ -109,10 +114,14 @@ main > .wrapper li {
    font-weight: 700;
 }
 
-
 main > .wrapper span:nth-of-type(2) {
    color: var(--Very-Dark-Gray);
-   font-size: 18px;
+   font-size: 14px;
+}
+
+main > #mapid {
+   height: 400px;
+   z-index: 1;
 }
 
 
@@ -120,23 +129,23 @@ main > .wrapper span:nth-of-type(2) {
 /* Footer Styles */
 
 footer {
-   color: var(--Very-Dark-Gray);
    font-size: 16px;
    margin-top: auto;
    padding: var(--pry-padding);
+   background-color: rgb(2, 2, 34);
+   text-align: center;
 }
 
 
 /* Media queries */
 
 @media only screen and (min-width: 600px) {
-   input[type="text"] {
-      font-size: 18px;
+   body {
+      font-size: 16px;
    }
 
-   main > .wrapper {
-      width: 90%;
-      margin: -250px auto;
+   input[type="text"] {
+      font-size: 18px;
    }
 
    main > .wrapper > ul {

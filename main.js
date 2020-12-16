@@ -4,7 +4,6 @@ const button = document.querySelector("#btn");
 window.addEventListener("load", displayData);
 
 function processIpData(resource) {
-
    // Create new promise. 
    return new Promise((resolve, reject) => {
 
@@ -53,4 +52,20 @@ function displayData() {
       });
 }
 
+// Function to set up the user map
+function mapDisplay() {
+   var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: "pk.eyJ1IjoiZmlyZXJ1bSIsImEiOiJja2lxc2hnaXIwNHZmMnJuNDJnbjA4YXExIn0.yU4hTgG6qJ2p2Sye3IaLAw"
+   }).addTo(mymap);
+}
+
+mapDisplay();
+
 button.addEventListener("click", displayData);
+
